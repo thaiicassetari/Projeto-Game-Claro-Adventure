@@ -24,14 +24,14 @@ O objetivo é melhorar a comunidade, apoiando iniciativas sustentáveis e mostra
 Equipe
 👥 Equipe
 
-Projeto desenvolvido por uma equipe de 5 participantes do bootcamp:
+Projeto desenvolvido por uma equipe de 6 participantes do bootcamp:
 
 Cleber Ribeiro 
-Marcelo d'amore [Marcelo d'amore](https://github.com/damoreucha)
-Pamella Namie [Pâmella Namie](https://github.com/Baabie)
-Ricardo Pardal [Ricardo Pardal](https://github.com/imoralman)
-Romildo A. Lima [Romildo A. Lima Jr.](https://github.com/romildoalimajr)
-Thaiane Cassetari [Thaiane Cassetari](https://github.com/thaiicassetari)
+[Marcelo d'amore](https://github.com/damoreucha)
+[Pâmella Namie](https://github.com/Baabie)
+[Ricardo Pardal](https://github.com/imoralman)
+[Romildo A. Lima Jr.](https://github.com/romildoalimajr)
+[Thaiane Cassetari](https://github.com/thaiicassetari)
 
 🛠️ Tecnologias Utilizadas
 
