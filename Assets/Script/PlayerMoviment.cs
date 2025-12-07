@@ -13,10 +13,8 @@ public class PlayerMoviment : MonoBehaviour
     [Header("Variables")] 
     public float velocidade = 5f;
     private bool isGround; 
-    private float yForce; //(forca do pulo)
-    private Rigidbody objetoEmpurrar; // Rigidbody do objeto que sera empurrado
-    bool push;
-    private float tempoSemContato = 0f;
+    private float yForce;
+    
 
     void Start()
     {
@@ -33,7 +31,6 @@ public class PlayerMoviment : MonoBehaviour
         Dance();
         Sentar();
         Levantar();
-        Push();
     }
 
     public void Mover()
@@ -112,36 +109,6 @@ public class PlayerMoviment : MonoBehaviour
         {
             animacao.SetTrigger("Up");
             //Debug.Log("T pressionado");
-        }
-    }
-    public void Push() 
-    {
-        if (Keyboard.current.leftShiftKey.isPressed)
-            Debug.Log("SHIFT pressionado");
-
-        if (objetoEmpurrar != null)
-            Debug.Log("Objeto detectado!");
-
-        if (Keyboard.current.leftShiftKey.isPressed && objetoEmpurrar != null)
-        {
-            Debug.Log("Empurrando!");
-            Vector3 pushDirection = transform.forward;
-            objetoEmpurrar.AddForce(pushDirection * 5f, ForceMode.Force);
-            animacao.SetBool("PushObject", true);
-        }
-        else
-        {
-            animacao.SetBool("PushObject", false);
-            Debug.Log("Objeto não detectado!");
-        }
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Pushable")) // Verifica se o objeto colidido é empurrável
-        {
-            objetoEmpurrar = hit.collider.attachedRigidbody;
-            tempoSemContato = 0f;
         }
     }
 }
