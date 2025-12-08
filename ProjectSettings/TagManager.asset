@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - ObjectPush
+  - GoalArea
   layers:
   - Default
   - TransparentFX
