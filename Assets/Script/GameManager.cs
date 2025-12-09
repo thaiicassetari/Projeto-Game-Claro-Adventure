@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject img;
 
     public static GameManager Instance;
-    public int totalCaixas = 4; // Defina o total de caixas no Inspector
+    public int totalCaixas = 6; // Defina o total de caixas no Inspector
     private int caixasCorretas = 0;
     public UnityEngine.UI.Text boxCountText; // Ou TMPro.TextMeshProUGUI
 

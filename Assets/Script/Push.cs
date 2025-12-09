@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
-
 public class Push : MonoBehaviour
 {
     public float power;

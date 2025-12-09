@@ -13,9 +13,8 @@ public class GoalChecker : MonoBehaviour
             Debug.LogError("GoalChecker requer o componente BoxIdentifier no mesmo objeto.");
         }
     }
-
-    //quando um objeto entra no Collider (Is Trigger = true)
-    private void OnTriggerEnter(Collider other) // Se for 2D, use OnTriggerEnter2D
+    
+    private void OnTriggerEnter(Collider other) 
     {
         BoxIdentifier box = other.GetComponent<BoxIdentifier>(); //pegar o BoxIdentifier do objeto que esta entrando
 
@@ -36,11 +35,9 @@ public class GoalChecker : MonoBehaviour
     }
 
     // Opcional: Se a caixa for movida para fora, reverter o estado
-    private void OnTriggerExit(Collider other) // Se for 2D, use OnTriggerExit2D
+    private void OnTriggerExit(Collider other)
     {
         BoxIdentifier box = other.GetComponent<BoxIdentifier>();
-
-        // Verifica se a caixa está saindo de um destino correto.
         if (box != null && box.isSolved && box.boxID == goalID.boxID)
         {
             box.isSolved = false;// Notifica para remover o ponto
