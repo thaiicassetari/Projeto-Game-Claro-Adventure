@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - ObjectPush
+  - GoalArea
+  - Ground
+  - Banco
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - Pushable
   - Ground
   - Objeto
-  - 
+  - GatilhoGramado
   - 
   - 
   - 

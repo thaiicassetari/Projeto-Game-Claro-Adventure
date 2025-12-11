@@ -14,7 +14,10 @@ public class PlayerMoviment : MonoBehaviour
     public float velocidade = 5f;
     private bool isGround; 
     private float yForce;
-    
+
+    bool sentado = false;       // estado atual
+    bool pertoDoBanco = false;  // detecta se há um banco por perto
+    public Transform player;
 
     void Start()
     {
@@ -26,11 +29,10 @@ public class PlayerMoviment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Mover(); 
+        Mover();
         Pular();
-        Dance();
-        Sentar();
-        Levantar();
+        SentaLevanta();
+        //Dance();
     }
 
     public void Mover()
@@ -65,7 +67,6 @@ public class PlayerMoviment : MonoBehaviour
 
         isGround = Physics.CheckSphere(foot.position, 0.3f, colisaoLayer);
         animacao.SetBool("IsGround", isGround);
-
     }
 
     public void Pular()
@@ -94,21 +95,43 @@ public class PlayerMoviment : MonoBehaviour
         }
     }
 
-    public void Sentar()
+    public void SentaLevanta()
     {
-        if (Keyboard.current.uKey.isPressed)
+        if (Keyboard.current.uKey.wasPressedThisFrame)
         {
-            animacao.SetTrigger("Sit");
-            //Debug.Log("U pressionado");
+            // Se já está sentado -> levantar
+            if (sentado)
+            {
+                animacao.SetTrigger("Up");
+                sentado = false;
+                return;
+            }
+
+            // Se não está sentado -> só senta se estiver perto do banco
+            if (pertoDoBanco)
+            {
+                animacao.SetTrigger("Sit");
+                sentado = true;
+
+                //Faz o player olhar para o eixo Z (0,0,0)
+                player.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Banco"))
+        {
+            pertoDoBanco = true;
         }
     }
 
-    public void Levantar()
+    private void OnTriggerExit(Collider other)
     {
-        if (Keyboard.current.tKey.isPressed)
+        if (other.CompareTag("Banco"))
         {
-            animacao.SetTrigger("Up");
-            //Debug.Log("T pressionado");
+            pertoDoBanco = false;
         }
     }
+
 }
