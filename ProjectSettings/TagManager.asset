@@ -9,6 +9,14 @@ TagManager:
   - GoalArea
   - Ground
   - Banco
+  - Antena1
+  - Antena2
+  - Antena3
+  - PedacoTorre
+  - AtivarTorre1
+  - AtivarTorre2
+  - AtivarTorre3
+  - SavePoint
   layers:
   - Default
   - TransparentFX
