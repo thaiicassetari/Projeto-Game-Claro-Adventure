@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using TMPro; // para TextMeshPro
+using TMPro; 
 
 public class GameManager : MonoBehaviour
 {
@@ -10,22 +10,24 @@ public class GameManager : MonoBehaviour
     public GameObject img;
 
     public static GameManager Instance;
-    public int totalCaixas = 6; // Defina o total de caixas no Inspector
+    public int totalCaixas = 6;  
     private int caixasCorretas = 0;
-    public UnityEngine.UI.Text boxCountText; // Ou TMPro.TextMeshProUGUI
+    public UnityEngine.UI.Text boxCountText;  
+
+    public GameObject AtivarTorre1;
+    public GameObject AtivarTorre2;
+    public GameObject AtivarTorre3;
+    public int ToatalPedacos = 12;
+    public UnityEngine.UI.Text pedacosCountText;
 
     void Awake()
-    {
-        // Garante que só exista uma instância deste Game Manager
+    { 
         if (Instance == null)
         {
-            Instance = this;
-            // Opcional: Se este objeto for o GameManager principal, pode mantê-lo entre cenas:
-            // DontDestroyOnLoad(gameObject);
+            Instance = this; 
         }
         else
-        {
-            // Se já existe uma instância, destrói este novo objeto para evitar duplicatas.
+        { 
             Destroy(gameObject);
         }
     }
@@ -39,8 +41,7 @@ public class GameManager : MonoBehaviour
 
         UpdateBoxCountUI();
     }
-
-    // Update is called once per frame
+     
     void Update()
     {
         ReturnGame();
@@ -111,7 +112,19 @@ public class GameManager : MonoBehaviour
 
     private void PuzzleComplete()
     {
-        Debug.Log("PUZZLE RESOLVIDO! VITÓRIA!");
-        // Ações de vitória: liberar porta, próxima cena, etc.
+        Debug.Log("PUZZLE RESOLVIDO! VITÓRIA!"); 
     }
+    public void AtualizarProgressoTorre(int totalColetado)
+    {
+        UpdatePedacosCountUI(totalColetado);
+    }
+
+    private void UpdatePedacosCountUI(int totalColetado)
+    {
+        if (pedacosCountText != null)
+        {
+            pedacosCountText.text = totalColetado.ToString() + " / " + ToatalPedacos.ToString();
+        }
+    }
+
 }
