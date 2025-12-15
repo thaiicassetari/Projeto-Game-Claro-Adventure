@@ -5,7 +5,7 @@ public class TeleporteUI : MonoBehaviour
     private Teleporte portalAtual;
 
     public GameObject painelMenu;
-    public Transform[] destinos;   // lista de destinos no inspector
+    public Transform[] destinos; 
 
     public void AbrirMenu(Teleporte portal)
     {
@@ -16,9 +16,7 @@ public class TeleporteUI : MonoBehaviour
     public void FecharMenu(Teleporte portal)
     {
         painelMenu.SetActive(false);
-    }
-
-    // Este é o método que os botões devem chamar (passando o índice pelo inspector)
+    } 
     public void EscolherDestino(int index)
     {
         if (portalAtual == null) return;

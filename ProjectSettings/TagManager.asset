@@ -17,6 +17,7 @@ TagManager:
   - AtivarTorre2
   - AtivarTorre3
   - SavePoint
+  - NPC
   layers:
   - Default
   - TransparentFX

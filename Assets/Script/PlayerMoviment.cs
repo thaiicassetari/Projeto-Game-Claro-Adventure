@@ -15,8 +15,8 @@ public class PlayerMoviment : MonoBehaviour
     private bool isGround; 
     private float yForce;
 
-    bool sentado = false;       // estado atual
-    bool pertoDoBanco = false;  // detecta se há um banco por perto
+    bool sentado = false;  
+    bool pertoDoBanco = false;  
     public Transform player;
 
     void Start()
@@ -25,13 +25,19 @@ public class PlayerMoviment : MonoBehaviour
         myCamera = Camera.main.transform;
         animacao = GetComponent<Animator>();  
     }
-
-    // Update is called once per frame
     void Update()
     {
         Mover();
         Pular();
-        SentaLevanta();
+        Correr();
+        if (pertoDoBanco && !sentado)
+        {
+            Sentar();
+        }
+        if (!pertoDoBanco && sentado)
+        {
+            Levantar();
+        }
         //Dance();
     }
 
@@ -95,29 +101,35 @@ public class PlayerMoviment : MonoBehaviour
         }
     }
 
-    public void SentaLevanta()
+    void Sentar()
     {
-        if (Keyboard.current.uKey.wasPressedThisFrame)
+        animacao.SetTrigger("Sit");
+        sentado = true;
+
+        // Faz o player olhar para o eixo Z (0,0,0)
+        player.rotation = Quaternion.Euler(0f, 0f, 0f);
+    }
+
+    void Levantar()
+    {
+        animacao.SetTrigger("Up");
+        sentado = false;
+    }
+
+    void Correr()
+    {
+        if (Keyboard.current.shiftKey.isPressed)
         {
-            // Se já está sentado -> levantar
-            if (sentado)
-            {
-                animacao.SetTrigger("Up");
-                sentado = false;
-                return;
-            }
-
-            // Se não está sentado -> só senta se estiver perto do banco
-            if (pertoDoBanco)
-            {
-                animacao.SetTrigger("Sit");
-                sentado = true;
-
-                //Faz o player olhar para o eixo Z (0,0,0)
-                player.rotation = Quaternion.Euler(0f, 0f, 0f);
-            }
+            velocidade = 15f;
+            animacao.SetBool("Run", true);
+        }
+        else
+        {
+            velocidade = 5f;
+            animacao.SetBool("Run", false);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Banco"))

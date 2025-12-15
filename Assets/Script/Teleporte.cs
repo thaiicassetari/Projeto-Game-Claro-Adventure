@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Teleporte : MonoBehaviour
 {
-    public Transform _player;        // Transform do player
-    public GameObject _playerObj;    // Obj do player (para desativar/ativar)
-    public TeleporteUI teleporteUI;  // Referência ao MENU UI
+    public Transform _player;   
+    public GameObject _playerObj;  
+    public TeleporteUI teleporteUI;  
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +20,6 @@ public class Teleporte : MonoBehaviour
 
     }
 
-    // Este método será chamado pela UI (recebe o Transform do destino)
     public void Teleportar(Transform destinoEscolhido)
     {
         _playerObj.SetActive(false);

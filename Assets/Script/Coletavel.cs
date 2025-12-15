@@ -6,7 +6,6 @@ public class Coletavel : MonoBehaviour
     public static int totalColetaveis = 0;
     public Text textoColetavel;
 
-
     void Start()
     {
         totalColetaveis = 0;

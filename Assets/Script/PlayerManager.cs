@@ -167,7 +167,6 @@ public class PlayerManager : MonoBehaviour
 
             temDadosSalvos = true;
             //Debug.Log("Dados carregados com sucesso!");
-            // NOVO: Atualiza o GameManager/UI após o carregamento
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.AtualizarProgressoTorre(pedacosTotaisColetados);
@@ -190,7 +189,7 @@ public class PlayerManager : MonoBehaviour
 
         if (vidaJogador <= 0)
         {
-            SceneManager.LoadScene(3); // Carrega a cena de game over
+            SceneManager.LoadScene(2);
         }
     }
 

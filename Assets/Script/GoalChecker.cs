@@ -16,31 +16,23 @@ public class GoalChecker : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) 
     {
-        BoxIdentifier box = other.GetComponent<BoxIdentifier>(); //pegar o BoxIdentifier do objeto que esta entrando
+        BoxIdentifier box = other.GetComponent<BoxIdentifier>();
 
         if (box != null && !box.isSolved)
         {
             if (box.boxID == goalID.boxID)
             {
                 box.isSolved = true;
-
-                // Exemplo de ação: Mudar a cor da caixa para verde
-                // var renderer = other.GetComponent<Renderer>();
-                // renderer.material.color = Color.green; 
-
-                // Notifica o Game Manager para contar o ponto
                 GameManager.Instance.BoxPlacedCorrectly();
             }
         }
     }
-
-    // Opcional: Se a caixa for movida para fora, reverter o estado
     private void OnTriggerExit(Collider other)
     {
         BoxIdentifier box = other.GetComponent<BoxIdentifier>();
         if (box != null && box.isSolved && box.boxID == goalID.boxID)
         {
-            box.isSolved = false;// Notifica para remover o ponto
+            box.isSolved = false;
             GameManager.Instance.BoxRemoved();
         }
     }
