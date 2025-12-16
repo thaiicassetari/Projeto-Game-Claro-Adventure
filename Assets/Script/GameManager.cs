@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     public GameObject img;
 
     public static GameManager Instance;
-    public int totalCaixas = 6;  
+    public int totalCaixas = 6;
     private int caixasCorretas = 0;
-    public UnityEngine.UI.Text boxCountText;  
+    public UnityEngine.UI.Text boxCountText;
 
     public GameObject AtivarTorre1;
     public GameObject AtivarTorre2;
@@ -20,23 +20,10 @@ public class GameManager : MonoBehaviour
     public int ToatalPedacos = 12;
     public UnityEngine.UI.Text pedacosCountText;
 
-    [Header("Áudio de Puzzles")] // 1. O AudioSource que está no objeto SFXPlayer
+    [Header("Áudio de Puzzles")] 
     [SerializeField] private AudioSource sfxPlayerSource;
-    [SerializeField] private AudioClip puzzleCompletionClip; // 2. O clip de som específico para a notificação de conclusão
+    [SerializeField] private AudioClip puzzleCompletionClip; 
 
-
-    void Awake()
-    { 
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void Start()
     {
@@ -47,7 +34,7 @@ public class GameManager : MonoBehaviour
 
         UpdateBoxCountUI();
     }
-     
+
     void Update()
     {
         ReturnGame();
@@ -134,20 +121,5 @@ public class GameManager : MonoBehaviour
             pedacosCountText.text = totalColetado.ToString() + " / " + ToatalPedacos.ToString();
         }
     }
-
-    //public void PlayPuzzleCompletionSFX()
-    //{
-    //    if (sfxPlayerSource != null && puzzleCompletionClip != null)
-    //    {
-    //        // Usa PlayOneShot para tocar o clip sem interromper outros sons
-    //        // que o sfxPlayerSource possa estar tocando (embora improvável neste caso).
-    //        sfxPlayerSource.PlayOneShot(puzzleCompletionClip);
-    //        Debug.Log("Notificação de puzzle concluído tocada!");
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError("SFX Player Source ou Puzzle Completion Clip não estão atribuídos no GameManager!");
-    //    }
-    //}
 
 }

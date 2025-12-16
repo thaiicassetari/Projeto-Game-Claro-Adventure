@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameMenu.unity
     guid: 60492556c4e29bd85a5cb0e10c7838dd
   - enabled: 1
-    path: Assets/Scenes/Equipe_G3.unity
+    path: Assets/Scenes/Claro_Adventure.unity
     guid: 055df184300538b40bd93d3be956cf0b
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
