@@ -28,11 +28,16 @@ public class MenuManager : MonoBehaviour
 
     public void Controle()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void Creditos()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
+    }
+
+    public void Musica()
+    {
+        SceneManager.LoadScene(5);
     }
 }

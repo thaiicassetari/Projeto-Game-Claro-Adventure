@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovimentMobile : MonoBehaviour
 {
-    [SerializeField] private float velocidade = 5; // Velocidade que o personagem irá se mover
+    [SerializeField] private float velocidade = 4; // Velocidade que o personagem irá se mover
 
     private Vector2 myInput; // Vector2 que armazena os inputs do joystick de movimento
     private CharacterController characterController; // Referência ao componente de CharacterController do personagem
@@ -22,19 +22,19 @@ public class PlayerMovimentMobile : MonoBehaviour
     /// Metodo responsável por obter as entradas do joystick.
     /// </summary>
     /// <param name="value">Callback com as entradas de joystick, vindos do Inputs Actions</param>
-    
     public void MoverPersonagem(InputAction.CallbackContext value)
     {
         myInput = value.ReadValue<Vector2>();
     }
-    
-    void Update()
+
+
+    private void Update()
     {
         RotacionarPersonagem(); // Chama o método para definir a rotação do personagem
         characterController.Move(transform.forward * myInput.magnitude * velocidade * Time.deltaTime);
         characterController.Move(Vector3.down * 9.81f * Time.deltaTime);
 
-        animator.SetBool("Mover", myInput != Vector2.zero); //andar
+        animator.SetBool("Mover", myInput != Vector2.zero);
     }
 
     /// <summary>

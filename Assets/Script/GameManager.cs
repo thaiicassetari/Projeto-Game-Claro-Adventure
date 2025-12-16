@@ -20,14 +20,20 @@ public class GameManager : MonoBehaviour
     public int ToatalPedacos = 12;
     public UnityEngine.UI.Text pedacosCountText;
 
+    [Header("Áudio de Puzzles")] // 1. O AudioSource que está no objeto SFXPlayer
+    [SerializeField] private AudioSource sfxPlayerSource;
+    [SerializeField] private AudioClip puzzleCompletionClip; // 2. O clip de som específico para a notificação de conclusão
+
+
     void Awake()
     { 
         if (Instance == null)
         {
-            Instance = this; 
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
-        { 
+        {
             Destroy(gameObject);
         }
     }
@@ -112,7 +118,9 @@ public class GameManager : MonoBehaviour
 
     private void PuzzleComplete()
     {
-        Debug.Log("PUZZLE RESOLVIDO! VITÓRIA!"); 
+        Debug.Log("PUZZLE RESOLVIDO! VITÓRIA!");
+        //PlayPuzzleCompletionSFX();
+        // Aqui você pode adicionar mais lógica para quando o puzzle for concluído
     }
     public void AtualizarProgressoTorre(int totalColetado)
     {
@@ -126,5 +134,20 @@ public class GameManager : MonoBehaviour
             pedacosCountText.text = totalColetado.ToString() + " / " + ToatalPedacos.ToString();
         }
     }
+
+    //public void PlayPuzzleCompletionSFX()
+    //{
+    //    if (sfxPlayerSource != null && puzzleCompletionClip != null)
+    //    {
+    //        // Usa PlayOneShot para tocar o clip sem interromper outros sons
+    //        // que o sfxPlayerSource possa estar tocando (embora improvável neste caso).
+    //        sfxPlayerSource.PlayOneShot(puzzleCompletionClip);
+    //        Debug.Log("Notificação de puzzle concluído tocada!");
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("SFX Player Source ou Puzzle Completion Clip não estão atribuídos no GameManager!");
+    //    }
+    //}
 
 }

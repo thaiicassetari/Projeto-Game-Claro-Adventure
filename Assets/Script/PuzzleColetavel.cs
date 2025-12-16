@@ -4,7 +4,7 @@ using TMPro;
 
 public class PuzzleColetavel : MonoBehaviour
 {
-    public int totalItens = 17;
+    public int totalItens = 1; //17
     public static int ItensColetado = 0;
     public Text textoColetavelAbrigo;
     public UnityEngine.UI.Text ItensColetadoText;
@@ -13,12 +13,6 @@ public class PuzzleColetavel : MonoBehaviour
     {
         ItensColetado = 0;
         AtualizarTexto();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,5 +32,21 @@ public class PuzzleColetavel : MonoBehaviour
             textoColetavelAbrigo.text = ItensColetado.ToString() + " / " + totalItens.ToString();
         }
 
+        // Verifica se o puzzle foi concluído aqui
+        //if (ItensColetado >= totalItens)
+        //{
+        //    ConcluirPuzzle();
+        //}
+
     }
+    //private void ConcluirPuzzle()
+    //{
+    //    Debug.Log("Puzzle Coletável Concluído!");
+    //    if (GameManager.Instance != null)
+    //    {
+    //        GameManager.Instance.PlayPuzzleCompletionSFX(); 
+    //    }
+
+    //    this.enabled = false;
+    //}
 }

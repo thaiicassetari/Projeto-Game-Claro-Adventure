@@ -106,7 +106,7 @@ public partial class @Entradas: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""56856d08-e952-4539-8b0b-d4a25bb078aa"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""DeltaTime"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 }

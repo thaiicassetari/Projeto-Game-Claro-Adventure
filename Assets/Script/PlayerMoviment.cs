@@ -92,15 +92,6 @@ public class PlayerMoviment : MonoBehaviour
         controller.Move(new Vector3(0, yForce, 0) * Time.deltaTime);
     }
 
-    public void Dance()
-    {
-        if (Keyboard.current.pKey.isPressed && isGround)
-        {
-            animacao.SetTrigger("Dance");
-            //Debug.Log("P pressionado");
-        }
-    }
-
     void Sentar()
     {
         animacao.SetTrigger("Sit");

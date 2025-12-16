@@ -10,7 +10,7 @@ public class GoalChecker : MonoBehaviour
         goalID = GetComponent<BoxIdentifier>();
         if (goalID == null)
         {
-            Debug.LogError("GoalChecker requer o componente BoxIdentifier no mesmo objeto.");
+          //  Debug.LogError("GoalChecker requer o componente BoxIdentifier no mesmo objeto.");
         }
     }
     

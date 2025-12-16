@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class _FuelController : MonoBehaviour
@@ -42,17 +43,18 @@ public class _FuelController : MonoBehaviour
         if (_fuel <= _fuelMin)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene(2);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Inimigo"))
-        {
-            _TomarDano();
-            Debug.Log("Colidiu com inimigo via TRIGGER.");
-        }
-        else if (other.CompareTag("Vida"))
+        //if (other.CompareTag("Inimigo"))
+        //{
+        //    _TomarDano();
+        //   // Debug.Log("Colidiu com inimigo via TRIGGER.");
+        //}
+        if (other.CompareTag("Vida"))
         {
             Abastece();
         }
@@ -63,6 +65,7 @@ public class _FuelController : MonoBehaviour
         _fuel -= _dano;
         _fuel = Mathf.Clamp(_fuel, _fuelMin, _fuelMax);
         // _fuelBar.value será atualizado suavemente via Update()
+
     }
 
     void Abastece()

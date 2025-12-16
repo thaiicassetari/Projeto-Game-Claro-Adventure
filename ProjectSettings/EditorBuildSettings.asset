@@ -15,11 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 80696953afb1ba14d87d660350c44ecd
   - enabled: 1
-    path: Assets/Scenes/Controles.unity
-    guid: ebfdeddfdd78ad847bd2601654bd678c
-  - enabled: 1
     path: Assets/Scenes/Creditos.unity
-    guid: eef04cc53a731c744941c44310c8ce25
+    guid: 42deb23654d63454e8ddf1384d3afed3
+  - enabled: 1
+    path: Assets/Scenes/Controles.unity
+    guid: b33d6cde94616384893d8329fa84f39c
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.input.settings: {fileID: 11400000, guid: ea742e6ed9c762a4fb497121141db1bb, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 40aa1ed91444b134a8ef314489522170, type: 3}
   m_UseUCBPForAssetBundles: 0

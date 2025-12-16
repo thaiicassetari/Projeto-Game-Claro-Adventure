@@ -95,6 +95,11 @@ public class PlayerManager : MonoBehaviour
             {
                 AtivarTorre3.SetActive(true);
                 //Debug.Log("Torre 3 ativada! (12/12) - Todas as torres ativadas!");
+                
+                //if (GameManager.Instance != null)
+                //{
+                //    GameManager.Instance.PlayPuzzleCompletionSFX();// Tocar o som de conclusão!
+                //}
             }
         }
         if (total < 12)
