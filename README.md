@@ -25,7 +25,6 @@ O objetivo é melhorar a comunidade, apoiando iniciativas sustentáveis e mostra
 
 Projeto desenvolvido por uma equipe de 6 participantes do bootcamp:
 
-[Cleber Ribeiro](https://github.com/clebersgit)
 [Marcelo d'amore](https://github.com/damoreucha)
 [Pâmella Namie](https://github.com/Baabie)
 [Ricardo Pardal](https://github.com/imoralman)
