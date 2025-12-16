@@ -23,7 +23,7 @@ O objetivo é melhorar a comunidade, apoiando iniciativas sustentáveis e mostra
 
 ### 👥 Equipe
 
-Projeto desenvolvido por uma equipe de 6 participantes do bootcamp:
+Projeto desenvolvido por uma equipe de 5 participantes do bootcamp:
 
 [Marcelo d'amore](https://github.com/damoreucha)
 [Pâmella Namie](https://github.com/Baabie)
