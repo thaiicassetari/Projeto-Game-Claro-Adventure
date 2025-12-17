@@ -86,5 +86,10 @@ A reprodução ou uso comercial depende das diretrizes da Claro e SoulCode Acade
 
 [![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=flat&logo=unity)](https://unity3d.com)
 [![Claro](https://img.shields.io/badge/Claro-EE1C25?style=for-the-badge&logo=claro&logoColor=white)](https://www.claro.com.br)
-[![SoulCode Academy](https://img.shields.io/badge/SoulCode%20Academy-000000?style=for-the-badge&logoUrl=URL_DA_LOGO_SOULCODE&logoColor=white)](https://soulcode.com/)
+<a href="https://soulcode.com/" target="_blank" rel="noopener noreferrer">
+  <img
+    src="https://img.shields.io/badge/SoulCode%20Academy-0052FF?style=for-the-badge&logoColor=0052FF&logoUrl=https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/assets/logo-soulcode.png&labelColor=FFFFFF"
+    alt="SoulCode Academy"
+  />
+</a>
 
