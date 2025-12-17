@@ -84,5 +84,5 @@ Criar um protótipo funcional apresentável
 Este projeto foi desenvolvido para fins educacionais durante o bootcamp.
 A reprodução ou uso comercial depende das diretrizes da Claro e SoulCode Academy.
 
-[![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=for-the-badge&logo=unity)](https://unity3d.com)
+[![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=flat&logo=unity)](https://unity3d.com)
 
