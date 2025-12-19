@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject AtivarTorre1;
     public GameObject AtivarTorre2;
     public GameObject AtivarTorre3;
-    public int ToatalPedacos = 12;
+    public int ToatalPedacos = 11;
     public UnityEngine.UI.Text pedacosCountText;
 
     [Header("Áudio de Puzzles")] 

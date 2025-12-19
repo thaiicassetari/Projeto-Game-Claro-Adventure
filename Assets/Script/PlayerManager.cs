@@ -89,7 +89,7 @@ public class PlayerManager : MonoBehaviour
                 //Debug.Log("Torre 2 ativada! (8/12)");
             }
         }
-        if (total >= 12)
+        if (total >= 11)
         {
             if (!AtivarTorre3.activeSelf)
             {
